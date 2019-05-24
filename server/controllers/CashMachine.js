@@ -13,7 +13,7 @@ export default ((req, res) => {
 
     let cashRegister = CashMachineChallenge(purchasePrice, cash)
 
-    let challenge = new Response('descriptionnnn', cashRegister);
+    let challenge = new Response(cashRegister);
 
     res.status(200).send(challenge);
 })

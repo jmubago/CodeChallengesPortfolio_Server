@@ -10,32 +10,7 @@ export default ((req, res) => {
 
     let nonRepeatingCharacter = NonRepeatingCharacterChallenge(string)
 
-    let challenge = new Response('descriptionnnn', nonRepeatingCharacter);
+    let challenge = new Response(nonRepeatingCharacter);
 
     res.status(200).send(challenge);
 })
-
-// let NonRepeatingCharacter = (string) => {
-//     // Eliminte white spaces
-//     let joingString = string.split(' ').join('');
-//     let stringSplit = joingString.split('');
-//     let counts = {};
-
-//     // Count repeating characters
-//     for (let i = 0; i < stringSplit.length; i++) {
-//         let key = stringSplit[i];
-//         counts[key] = (counts[key]) ? counts[key] + 1 : 1;
-
-//     }
-
-//     // Find the first non-repeating character
-//     for (let x = 0; x < stringSplit.length; x++) {
-//         let letter = stringSplit[x];
-//         if (counts[letter] === 1) {
-//             return letter;
-//         }
-//     }
-// }
-
-// console.log(NonRepeatingCharacter("abcdef"));
-// console.log(NonRepeatingCharacter("hello world hi hey"));

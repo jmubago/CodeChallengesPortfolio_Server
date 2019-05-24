@@ -17,7 +17,7 @@ export default ((req, res) => {
 
     let romanNumberChallenge = RomanNumberChallenge(number)
 
-    let challenge = new Response('descriptionnnn', romanNumberChallenge);
+    let challenge = new Response(romanNumberChallenge);
 
     res.status(200).send(challenge);
 })

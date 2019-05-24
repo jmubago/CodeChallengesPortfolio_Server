@@ -19,7 +19,7 @@ export default ((req, res) => {
 
     let scaleBalancingChallenge = ScaleBalancingChallenge(weightScale, weights)
 
-    let challenge = new Response('descriptionnnn', scaleBalancingChallenge);
+    let challenge = new Response(scaleBalancingChallenge);
 
     res.status(200).send(challenge);
 })
