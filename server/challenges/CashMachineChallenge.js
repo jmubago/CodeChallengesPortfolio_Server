@@ -13,14 +13,15 @@ export function CashMachineChallenge(PP, CH) {
         'NICKEL': 0.05,
         'PENNY': 0.01
     }
+
     let change = [];
     let i;
 
     if (PP > CH) {
-        return 'ERROR';
+        return 'Purchase price is higher than cash';
     }
     if (PP == CH) {
-        return 'ZERO';
+        return 'No change needed';
     }
     if (PP < CH) {
         let takeAway = CH - PP;
