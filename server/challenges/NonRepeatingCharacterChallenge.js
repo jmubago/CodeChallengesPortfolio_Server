@@ -1,6 +1,6 @@
 export function NonRepeatingCharacterChallenge(string) {
 
-    // Eliminte white spaces
+    // Eliminate white spaces
     let joingString = string.split(' ').join('');
     let stringSplit = joingString.split('');
     let counts = {};
@@ -9,7 +9,6 @@ export function NonRepeatingCharacterChallenge(string) {
     for (let i = 0; i < stringSplit.length; i++) {
         let key = stringSplit[i];
         counts[key] = (counts[key]) ? counts[key] + 1 : 1;
-
     }
 
     // Find the first non-repeating character
