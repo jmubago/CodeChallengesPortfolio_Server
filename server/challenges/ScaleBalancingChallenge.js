@@ -85,6 +85,6 @@ export function ScaleBalancingChallenge(weightScale, weights) {
     else if (bothSidesAddedWeight != undefined && bothSidesAddedWeight.length <= 2) {
         return bothSidesAddedWeight;
     } else {
-        return 'Not possible to balance under the exercise conditions';
+        return 'Not possible';
     }
 }
