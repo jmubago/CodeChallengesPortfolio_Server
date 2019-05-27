@@ -19,7 +19,7 @@ export function ScaleBalancingChallenge(weightScale, weights) {
     let addWeight = [];
     let flagLightSide = lightSide;
 
-    // Putting weights same side of weight scale
+    // Putting weights on same side of weight scale
     let oneSideAddedWeight = addWeightToOneSide(weights);
 
     // Putting weights on both sides of weight scale
@@ -31,7 +31,7 @@ export function ScaleBalancingChallenge(weightScale, weights) {
             weight = parseInt(weight);
             let sum = (flagLightSide + weight);
 
-            // Add weights while the sum equals or are smaller than heavyside
+            // Add weights while the sum equals or is smaller than heavyside
             if (sum <= heavySide) {
                 flagLightSide += weight;
                 addWeight.push(weights[index]);
@@ -57,7 +57,7 @@ export function ScaleBalancingChallenge(weightScale, weights) {
         let smallScaleIndex = weights.length - 1;
         // For every available weight, check every possible weight combination
         for (let i = weights.length - 1; i > 0; i--) {
-            // Check from heaviest to lightest available weight t obtain the smallest number of used weights
+            // Check from heaviest to lightest available weight to obtain the smallest number of used weights
             for (let y = 0; y <= weights.length - 1; y++) {
                 let newBigWeight = heavySide + parseInt(weights[y]);
                 let newSmallWeight = lightSide + parseInt(weights[smallScaleIndex]);
@@ -79,12 +79,10 @@ export function ScaleBalancingChallenge(weightScale, weights) {
 
     // Return weights added to just one side of scale balance. Max 2 weights total.
     if (oneSideAddedWeight != undefined && oneSideAddedWeight.length <= 2) {
-        console.log('one side');
         return oneSideAddedWeight;
     }
     // Return weights added to both sides of scale balance. Max 2 weights total.
     else if (bothSidesAddedWeight != undefined && bothSidesAddedWeight.length <= 2) {
-        console.log('both sides');
         return bothSidesAddedWeight;
     } else {
         return 'Not possible to balance under the exercise conditions';
