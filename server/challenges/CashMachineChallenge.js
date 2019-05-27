@@ -18,10 +18,10 @@ export function CashMachineChallenge(PP, CH) {
     let i;
 
     if (PP > CH) {
-        return 'Purchase price is higher than cash';
+        return 1;
     }
     if (PP == CH) {
-        return 'No change needed';
+        return 0;
     }
     if (PP < CH) {
         let takeAway = CH - PP;
