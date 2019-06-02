@@ -1,1 +1,1 @@
-web: node_modules/.bin/nodemon index-es7.js
+web: node index.js

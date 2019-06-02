@@ -21,8 +21,5 @@
     },
     "devDependencies": {
         "nodemon": "^1.17.5"
-    },
-    "engines": {
-        "node": "11.10"
     }
 }
