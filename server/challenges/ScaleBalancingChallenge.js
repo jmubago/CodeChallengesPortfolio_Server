@@ -57,11 +57,17 @@ export function ScaleBalancingChallenge(weightScale, weights) {
         let smallScaleIndex = weights.length - 1;
         // For every available weight, check every possible weight combination
         for (let i = weights.length - 1; i > 0; i--) {
+            // If two weights have been added already return it
+            if (addWeight.length >= 2) {
+                return addWeight;
+            }
             // Check from heaviest to lightest available weight to obtain the smallest number of used weights
             for (let y = 0; y <= weights.length - 1; y++) {
                 let newBigWeight = heavySide + parseInt(weights[y]);
                 let newSmallWeight = lightSide + parseInt(weights[smallScaleIndex]);
                 if (newBigWeight == newSmallWeight) {
+                    // console.log(newBigWeight, newSmallWeight);
+                    // console.log(weights[y], weights[smallScaleIndex]);
                     addWeight.push(weights[y]);
                     addWeight.push(weights[smallScaleIndex]);
                 }
@@ -76,7 +82,7 @@ export function ScaleBalancingChallenge(weightScale, weights) {
             return undefined;
         }
     }
-
+    console.log(oneSideAddedWeight, bothSidesAddedWeight);
     // Return weights added to just one side of scale balance. Max 2 weights total.
     if (oneSideAddedWeight != undefined && oneSideAddedWeight.length <= 2) {
         return oneSideAddedWeight;
