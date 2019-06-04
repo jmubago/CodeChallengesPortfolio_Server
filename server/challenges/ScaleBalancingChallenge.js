@@ -66,8 +66,6 @@ export function ScaleBalancingChallenge(weightScale, weights) {
                 let newBigWeight = heavySide + parseInt(weights[y]);
                 let newSmallWeight = lightSide + parseInt(weights[smallScaleIndex]);
                 if (newBigWeight == newSmallWeight) {
-                    // console.log(newBigWeight, newSmallWeight);
-                    // console.log(weights[y], weights[smallScaleIndex]);
                     addWeight.push(weights[y]);
                     addWeight.push(weights[smallScaleIndex]);
                 }
