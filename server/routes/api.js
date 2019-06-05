@@ -8,6 +8,7 @@ export default () => {
     api.post('/nonrepeatingcharacter', controller.NonRepeatingCharacter);
     api.post('/romannumbers', controller.RomanNumbers);
     api.post('/scalebalancing', controller.ScaleBalancing);
+    api.post('/kaprekarsconstant', controller.KaprekarsConstant);
 
     return api
 }
